@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ch Naresh | Talent Acquisition Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: #7A621E;
+    --ink: #0C0C0E;
+    --ink-soft: #1A1A1F;
+    --ink-muted: #2E2E36;
+    --surface: #13131A;
+    --surface-raised: #1C1C25;
+    --surface-card: #21212D;
+    --border: rgba(201,168,76,0.18);
+    --border-strong: rgba(201,168,76,0.35);
+    --text-primary: #F0EDE6;
+    --text-secondary: #A09888;
+    --text-muted: #645E54;
+    --accent-blue: #4A9ECD;
+    --accent-teal: #3DB89A;
+    --accent-coral: #D4704A;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --radius: 12px;
+    --radius-sm: 6px;
+    --shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--ink);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(12,12,14,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .nav-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    color: var(--accent-teal);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--accent-teal);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 6vw 60px;
+    position: relative;
+    overflow: hidden;
+    gap: 4rem;
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-bg-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--border-strong);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .hero-name span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 480px;
+    line-height: 1.8;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .hero-stat {
+    border-left: 2px solid var(--border-strong);
+    padding-left: 1rem;
+  }
+
+  .hero-stat .number {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-stat .label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+  }
+
+  /* ── AVATAR ── */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .avatar-frame {
+    position: relative;
+    width: 340px;
+    height: 400px;
+  }
+
+  .avatar-ring {
+    position: absolute;
+    inset: -20px;
+    border: 1px solid var(--border);
+    border-radius: 200px;
+    animation: rotateRing 20s linear infinite;
+  }
+
+  .avatar-ring::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  @keyframes rotateRing {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .avatar-container {
+    width: 340px;
+    height: 400px;
+    border-radius: 180px;
+    overflow: hidden;
+    background: var(--surface-raised);
+    border: 2px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .avatar-svg-art {
+    width: 100%;
+    height: 100%;
+  }
+
+  .avatar-badge {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface-card);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── SECTION COMMON ── */
+  section {
+    padding: 80px 6vw;
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .section-title em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .section-body {
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    background: var(--surface);
+  }
+
+  .about-content .hero-stat { margin-top: 2rem; }
+
+  .about-quadrants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .about-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .about-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+
+  .about-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-card h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .about-card p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .geo-flags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .geo-flag {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  /* ── EXPERTISE ── */
+  #expertise {
+    background: var(--ink);
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .expertise-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .expertise-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-4px);
+  }
+
+  .expertise-card:hover::before { opacity: 1; }
+
+  .expertise-icon {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .expertise-card h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .expertise-metric {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ── SKILLS ── */
+  #skills {
+    background: var(--surface);
+  }
+
+  .skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .skills-category {
+    margin-bottom: 2.5rem;
+  }
+
+  .skills-category h3 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .skill-tag:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .skill-tag.highlight {
+    border-color: var(--border-strong);
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .tool-pill {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+  }
+
+  .tool-pill:hover {
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+    background: var(--surface-raised);
+  }
+
+  /* ── CLIENTS ── */
+  #clients {
+    background: var(--ink);
+    overflow: hidden;
+  }
+
+  .clients-marquee-wrap {
+    margin-top: 2.5rem;
+    overflow: hidden;
+    mask: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  }
+
+  .clients-marquee {
+    display: flex;
+    gap: 2rem;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  .clients-marquee:hover { animation-play-state: paused; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .client-chip {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .client-chip:hover {
+    border-color: var(--border-strong);
+    color: var(--gold);
+  }
+
+  /* ── INDUSTRIES ── */
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .industry-tile {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .industry-tile:hover {
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+    background: var(--surface-card);
+    transform: translateY(-2px);
+  }
+
+  .industry-tile .ind-icon {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── TECH STACK ── */
+  #techstack {
+    background: var(--surface);
+  }
+
+  .tech-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .tech-block {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .tech-block h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .tech-block p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ── PROJECT CASE STUDY ── */
+  #project {
+    background: var(--ink);
+  }
+
+  .case-study {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .case-study-header {
+    background: linear-gradient(135deg, var(--surface-card), var(--ink-muted));
+    padding: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .case-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--border-strong);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .case-study-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .case-study-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    max-width: 640px;
+    line-height: 1.8;
+  }
+
+  .case-study-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .case-metrics {
+    padding: 2.5rem;
+    border-right: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-content: start;
+  }
+
+  .metric-box {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .metric-box .val {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .metric-box .desc {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+  }
+
+  .case-features {
+    padding: 2.5rem;
+  }
+
+  .case-features h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .feature-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+
+  /* ── ACHIEVEMENTS ── */
+  #achievements {
+    background: var(--surface);
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .achievement-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .achievement-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+
+  .ach-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .ach-text h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .ach-text p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications {
+    background: var(--ink);
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .cert-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .cert-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+
+  .cert-provider {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .cert-card p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── VIDEO ── */
+  #video {
+    background: var(--surface);
+  }
+
+  .video-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .video-frame {
+    position: relative;
+    background: var(--surface-card);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-frame svg { position: absolute; }
+
+  .video-play-btn {
+    width: 64px;
+    height: 64px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+    z-index: 2;
+  }
+
+  .video-frame:hover .video-play-btn {
+    transform: scale(1.08);
+    background: var(--gold-light);
+  }
+
+  .video-play-btn svg {
+    width: 24px;
+    height: 24px;
+    position: static;
+    fill: var(--ink);
+    margin-left: 3px;
+  }
+
+  .video-caption {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+
+  .video-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .video-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .video-topics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .video-topic {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+
+  .video-topic::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.6rem;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--ink);
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--border-strong);
+    transform: translateX(4px);
+  }
+
+  .contact-link-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-link-text { flex: 1; }
+
+  .contact-link-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+  }
+
+  .contact-link-value {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .contact-link-arrow {
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover .contact-link-arrow { color: var(--gold); }
+
+  .contact-form {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--text-muted); }
+
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.875rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.15s;
+    font-family: var(--font-body);
+  }
+
+  .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink-soft);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #hero, #about, .video-layout, .contact-layout { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .skills-layout { grid-template-columns: 1fr; }
+    .case-study-body { grid-template-columns: 1fr; }
+    .case-metrics { border-right: none; border-bottom: 1px solid var(--border); }
+    nav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="#hero" class="nav-logo">CN</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#project">Work</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-badge">Open to CXO Opportunities</div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-orb"></div>
+
+  <div>
+    <div class="hero-tag">Talent Acquisition Leader</div>
+    <h1 class="hero-name">
+      Ch<span>Naresh</span>
+    </h1>
+    <p class="hero-subtitle">
+      Architecting talent strategies that scale. 10+ years driving enterprise TA transformations across RPO, MSP, GCC, and global hiring across India, APAC, Middle East, UK, and the US.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">Let's Connect ↗</a>
+      <a href="#expertise" class="btn-secondary">View Expertise</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="number">10+</span>
+        <span class="label">Years Global TA</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">95%+</span>
+        <span class="label">SLA Compliance</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">30+</span>
+        <span class="label">Recruiters Led</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">8+</span>
+        <span class="label">Global Markets</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="avatar-frame">
+      <div class="avatar-ring"></div>
+      <div class="avatar-container">
+        <!-- AI-generated avatar SVG illustration -->
+        <svg class="avatar-svg-art" viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1C1C25"/>
+              <stop offset="100%" stop-color="#0C0C0E"/>
+            </radialGradient>
+            <radialGradient id="skinGrad" cx="40%" cy="30%" r="60%">
+              <stop offset="0%" stop-color="#C68642"/>
+              <stop offset="100%" stop-color="#8D5524"/>
+            </radialGradient>
+            <radialGradient id="shirtGrad" cx="50%" cy="0%" r="80%">
+              <stop offset="0%" stop-color="#1a2a4a"/>
+              <stop offset="100%" stop-color="#0d1a30"/>
+            </radialGradient>
+          </defs>
+          <!-- Background -->
+          <rect width="340" height="400" fill="url(#bgGrad)"/>
+          <!-- Decorative gold ring accent -->
+          <circle cx="170" cy="170" r="130" fill="none" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="4,8" opacity="0.3"/>
+          <!-- Body / Suit -->
+          <ellipse cx="170" cy="370" rx="120" ry="90" fill="url(#shirtGrad)"/>
+          <!-- Collar / Shirt -->
+          <polygon points="155,260 170,290 185,260 195,265 170,310 145,265" fill="#E8C97A" opacity="0.9"/>
+          <!-- Jacket lapels -->
+          <polygon points="130,270 155,260 145,265 125,300" fill="#0f1e38"/>
+          <polygon points="210,270 185,260 195,265 215,300" fill="#0f1e38"/>
+          <!-- Tie -->
+          <polygon points="167,265 173,265 175,300 170,310 165,300" fill="#C9A84C" opacity="0.8"/>
+          <!-- Neck -->
+          <rect x="155" y="228" width="30" height="38" rx="10" fill="url(#skinGrad)"/>
+          <!-- Head -->
+          <ellipse cx="170" cy="195" rx="58" ry="65" fill="url(#skinGrad)"/>
+          <!-- Hair -->
+          <ellipse cx="170" cy="140" rx="58" ry="40" fill="#1a0d00"/>
+          <ellipse cx="115" cy="175" rx="15" ry="28" fill="#1a0d00"/>
+          <ellipse cx="225" cy="175" rx="15" ry="28" fill="#1a0d00"/>
+          <!-- Ear left -->
+          <ellipse cx="113" cy="198" rx="9" ry="13" fill="#A0692A"/>
+          <!-- Ear right -->
+          <ellipse cx="227" cy="198" rx="9" ry="13" fill="#A0692A"/>
+          <!-- Eye left -->
+          <ellipse cx="148" cy="195" rx="11" ry="10" fill="white"/>
+          <ellipse cx="150" cy="196" rx="7" ry="7" fill="#1a0d00"/>
+          <ellipse cx="152" cy="194" rx="2.5" ry="2.5" fill="#fff" opacity="0.5"/>
+          <!-- Eye right -->
+          <ellipse cx="192" cy="195" rx="11" ry="10" fill="white"/>
+          <ellipse cx="190" cy="196" rx="7" ry="7" fill="#1a0d00"/>
+          <ellipse cx="194" cy="194" rx="2.5" ry="2.5" fill="#fff" opacity="0.5"/>
+          <!-- Eyebrows -->
+          <path d="M138 184 Q149 179 160 183" stroke="#1a0d00" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M182 183 Q193 179 204 184" stroke="#1a0d00" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Nose -->
+          <path d="M168 200 Q163 215 158 220 Q170 224 182 220 Q177 215 172 200" fill="#8D5524" opacity="0.6"/>
+          <!-- Mouth (subtle smile) -->
+          <path d="M155 232 Q170 242 185 232" stroke="#7a3e1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Gold accent glow -->
+          <circle cx="170" cy="195" r="68" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.15"/>
+          <!-- Bottom gradient fade -->
+          <rect x="0" y="280" width="340" height="120" fill="url(#bgGrad)" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="avatar-badge">TA Leader · Strategist</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">Architecting talent strategies<br/><em>that scale</em></h2>
+    <p class="section-body">
+      I partner with C-Suite executives, CHROs, and business leaders to design and execute talent acquisition strategies that drive organisational growth — from building scalable recruiting engines to establishing GCCs and leading enterprise-wide RPO/MSP transformations.
+    </p>
+    <p class="section-body" style="margin-top:1rem;">
+      My leadership philosophy combines data-driven decision-making with a deep understanding of workforce economics — enabling talent leaders to move from reactive hiring to proactive talent supply chains aligned with long-term business objectives.
+    </p>
+    <div class="geo-flags">
+      <span class="geo-flag">🇮🇳 India</span>
+      <span class="geo-flag">🇸🇬 Singapore</span>
+      <span class="geo-flag">🇲🇾 Malaysia</span>
+      <span class="geo-flag">🇨🇳 China</span>
+      <span class="geo-flag">🇦🇪 Middle East</span>
+      <span class="geo-flag">🇬🇧 UK</span>
+      <span class="geo-flag">🇺🇸 US</span>
+    </div>
+  </div>
+  <div class="about-quadrants reveal">
+    <div class="about-card">
+      <div class="icon">🎯</div>
+      <h4>Strategic TA Leadership</h4>
+      <p>Designing enterprise-wide talent acquisition frameworks that align hiring velocity with business growth and revenue targets.</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">📊</div>
+      <h4>Workforce Intelligence</h4>
+      <p>Translating recruitment data into boardroom-ready insights — TAT trends, conversion analytics, cost-per-hire, and talent market intelligence.</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">🌐</div>
+      <h4>Global Talent Operations</h4>
+      <p>Building and leading distributed recruiting teams across multiple geographies with consistent quality, compliance, and cultural alignment.</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">🤝</div>
+      <h4>Executive Stakeholder Partnership</h4>
+      <p>Trusted advisor to BU heads, client SPOCs, and C-level leadership — influencing hiring decisions through data, relationships, and strategic foresight.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── EXPERTISE ── -->
+<section id="expertise">
+  <div class="reveal">
+    <div class="section-label">Areas of Impact</div>
+    <h2 class="section-title">Deep <em>expertise</em><br/>across TA dimensions</h2>
+  </div>
+  <div class="expertise-grid">
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">🏗️</div>
+      <h3>Recruitment Operations Architecture</h3>
+      <p>Built and scaled end-to-end TA functions handling FTE, C2H, RPO, and MSP models with full delivery ownership and SLA accountability.</p>
+      <span class="expertise-metric">Full delivery ownership</span>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">📈</div>
+      <h3>Performance-Driven Leadership</h3>
+      <p>Achieved 95%+ SLA compliance and 20% reduction in time-to-fill through data-led process optimisation and recruiter capability building.</p>
+      <span class="expertise-metric">20% TTF reduction</span>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">🌐</div>
+      <h3>Global Talent Delivery</h3>
+      <p>Delivered hiring mandates across India, APAC, Middle East, UK and US — navigating cross-border regulations, cultural nuances, and diverse talent markets.</p>
+      <span class="expertise-metric">8+ global markets</span>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">⚙️</div>
+      <h3>GCC &amp; ODC Setup Expertise</h3>
+      <p>Designed and executed GCC, ODC, HTD/BOT hiring models, enabling clients to build offshore capability centres efficiently and at scale.</p>
+      <span class="expertise-metric">BOT / HTD models</span>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">👥</div>
+      <h3>Team Leadership at Scale</h3>
+      <p>Led and mentored teams of 15–30+ recruiters, driving performance through structured KPIs, knowledge transfer, and strategic allocation.</p>
+      <span class="expertise-metric">30+ recruiters led</span>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">💡</div>
+      <h3>Client &amp; Account Growth</h3>
+      <p>Grew accounts through consultative engagement, proactive talent advisory, and deep understanding of client business objectives and workforce needs.</p>
+      <span class="expertise-metric">Consultative advisory</span>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">📊</div>
+      <h3>Talent Analytics &amp; Dashboards</h3>
+      <p>Built recruitment dashboards tracking TAT, pipeline health, offer-to-join ratios, and conversion metrics to enable leadership decision-making.</p>
+      <span class="expertise-metric">Power BI dashboards</span>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">🎯</div>
+      <h3>Strategic Workforce Planning</h3>
+      <p>Partnered with BU Heads and CHROs on demand forecasting, bench strategy, and talent pipeline planning reducing urgent-hire dependency by ~25%.</p>
+      <span class="expertise-metric">~25% dependency cut</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Leadership <em>skill set</em></h2>
+    <p class="section-body">Comprehensive capabilities spanning TA leadership, resource management, and strategic workforce planning.</p>
+  </div>
+  <div class="skills-layout reveal">
+    <div>
+      <div class="skills-category">
+        <h3>Strategic</h3>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Talent Acquisition Strategy</span>
+          <span class="skill-tag highlight">Talent Pipeline Architecture</span>
+          <span class="skill-tag">Workforce Planning &amp; Forecasting</span>
+          <span class="skill-tag">Demand Forecasting</span>
+          <span class="skill-tag">Capacity Planning</span>
+          <span class="skill-tag">Talent Supply Chain</span>
+          <span class="skill-tag highlight">Strategic &amp; Executive Hiring</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3>Delivery Models</h3>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">RPO / MSP / C2H</span>
+          <span class="skill-tag highlight">GCC Hiring &amp; Setup</span>
+          <span class="skill-tag">ODC &amp; BOT Models</span>
+          <span class="skill-tag">Vendor &amp; Contract Management</span>
+          <span class="skill-tag">Bench Strategy</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3>Analytics &amp; People</h3>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Talent Analytics &amp; Metrics</span>
+          <span class="skill-tag">SLA / TAT Management</span>
+          <span class="skill-tag">Power BI Dashboards</span>
+          <span class="skill-tag">DEI Hiring Strategies</span>
+          <span class="skill-tag">Employer Branding</span>
+          <span class="skill-tag">Recruiter Performance Coaching</span>
+          <span class="skill-tag">Agile Recruitment</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);">ATS / VMS / MSP Platforms</h3>
+      <div class="tools-grid">
+        <div class="tool-pill">Beeline</div>
+        <div class="tool-pill">SAP Fieldglass</div>
+        <div class="tool-pill">Ceipal</div>
+        <div class="tool-pill">Oorwin</div>
+        <div class="tool-pill">Zoho Recruit</div>
+        <div class="tool-pill">Keka HR</div>
+        <div class="tool-pill">Spottabl</div>
+        <div class="tool-pill">Fractionable</div>
+        <div class="tool-pill">TAD</div>
+        <div class="tool-pill">Caypro</div>
+        <div class="tool-pill">Tallite</div>
+        <div class="tool-pill">Vndly</div>
+        <div class="tool-pill">Power BI</div>
+        <div class="tool-pill">In-house ATS</div>
+        <div class="tool-pill">LinkedIn</div>
+        <div class="tool-pill">Naukri</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── CLIENTS ── -->
+<section id="clients">
+  <div class="reveal">
+    <div class="section-label">Track Record</div>
+    <h2 class="section-title">Clients &amp; <em>organisations</em> served</h2>
+    <p class="section-body">Delivered hiring outcomes for some of the world's most recognised enterprises across technology, consulting, finance, and retail.</p>
+  </div>
+
+  <div class="clients-marquee-wrap reveal">
+    <div class="clients-marquee">
+      <span class="client-chip">Amazon</span>
+      <span class="client-chip">Microsoft</span>
+      <span class="client-chip">Google</span>
+      <span class="client-chip">Salesforce</span>
+      <span class="client-chip">PwC</span>
+      <span class="client-chip">Deloitte</span>
+      <span class="client-chip">IBM</span>
+      <span class="client-chip">Dell</span>
+      <span class="client-chip">Oracle</span>
+      <span class="client-chip">SAP</span>
+      <span class="client-chip">HCL</span>
+      <span class="client-chip">Cognizant</span>
+      <span class="client-chip">Accenture</span>
+      <span class="client-chip">HSBC</span>
+      <span class="client-chip">Blackrock</span>
+      <span class="client-chip">Thomson Reuters</span>
+      <span class="client-chip">Walmart</span>
+      <span class="client-chip">Verizon</span>
+      <span class="client-chip">British Telecom</span>
+      <span class="client-chip">S&amp;P Global</span>
+      <span class="client-chip">Paytm</span>
+      <span class="client-chip">Blueyonder</span>
+      <span class="client-chip">Yash Technologies</span>
+      <!-- duplicate for seamless loop -->
+      <span class="client-chip">Amazon</span>
+      <span class="client-chip">Microsoft</span>
+      <span class="client-chip">Google</span>
+      <span class="client-chip">Salesforce</span>
+      <span class="client-chip">PwC</span>
+      <span class="client-chip">Deloitte</span>
+      <span class="client-chip">IBM</span>
+      <span class="client-chip">Dell</span>
+      <span class="client-chip">Oracle</span>
+      <span class="client-chip">SAP</span>
+      <span class="client-chip">HCL</span>
+      <span class="client-chip">Cognizant</span>
+      <span class="client-chip">Accenture</span>
+      <span class="client-chip">HSBC</span>
+      <span class="client-chip">Blackrock</span>
+      <span class="client-chip">Thomson Reuters</span>
+      <span class="client-chip">Walmart</span>
+      <span class="client-chip">Verizon</span>
+      <span class="client-chip">British Telecom</span>
+      <span class="client-chip">S&amp;P Global</span>
+      <span class="client-chip">Paytm</span>
+      <span class="client-chip">Blueyonder</span>
+      <span class="client-chip">Yash Technologies</span>
+    </div>
+  </div>
+
+  <div class="section-label reveal" style="margin-top:3rem;">Industries Served</div>
+  <div class="industries-grid reveal">
+    <div class="industry-tile"><span class="ind-icon">💻</span>Information Technology</div>
+    <div class="industry-tile"><span class="ind-icon">🖥️</span>ITeS</div>
+    <div class="industry-tile"><span class="ind-icon">🛒</span>E-Commerce</div>
+    <div class="industry-tile"><span class="ind-icon">🎓</span>Edtech</div>
+    <div class="industry-tile"><span class="ind-icon">💳</span>Fintech</div>
+    <div class="industry-tile"><span class="ind-icon">🏥</span>Healthcare</div>
+    <div class="industry-tile"><span class="ind-icon">🏦</span>BFSI</div>
+    <div class="industry-tile"><span class="ind-icon">📡</span>Telecom</div>
+    <div class="industry-tile"><span class="ind-icon">🚗</span>Automotive</div>
+    <div class="industry-tile"><span class="ind-icon">🎬</span>Media &amp; Entertainment</div>
+    <div class="industry-tile"><span class="ind-icon">🚚</span>Transport &amp; Logistics</div>
+    <div class="industry-tile"><span class="ind-icon">🏠</span>Real Estate</div>
+    <div class="industry-tile"><span class="ind-icon">⚖️</span>Legal Services</div>
+    <div class="industry-tile"><span class="ind-icon">🖧</span>Data Centers</div>
+    <div class="industry-tile"><span class="ind-icon">🚀</span>Startups</div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── TECH STACK ── -->
+<section id="techstack" style="background:var(--surface);">
+  <div class="reveal">
+    <div class="section-label">Technical Hiring Depth</div>
+    <h2 class="section-title">Tech stack <em>fluency</em></h2>
+    <p class="section-body">Deep domain knowledge across modern tech stacks enabling precise, credible conversations with engineering candidates and hiring managers.</p>
+  </div>
+  <div class="tech-categories reveal">
+    <div class="tech-block">
+      <h4>Java / .Net / Backend</h4>
+      <p>Java, Spring Boot, Microservices, C#.NET, ASP.NET Core, Node.js, Python, Django, Flask, Ruby on Rails, Golang, GraphQL, Laravel</p>
+    </div>
+    <div class="tech-block">
+      <h4>Cloud &amp; DevOps</h4>
+      <p>Azure, AWS, GCP, Kubernetes, Docker, PCF, IBM Cloud, Oracle Cloud, CI/CD pipelines, Infrastructure as Code</p>
+    </div>
+    <div class="tech-block">
+      <h4>Frontend</h4>
+      <p>React, Angular, Vue.js, TypeScript, Svelte, HTML/CSS, Bootstrap, Next.js, Tailwind</p>
+    </div>
+    <div class="tech-block">
+      <h4>Data &amp; AI</h4>
+      <p>Python, R, ML/DL, TensorFlow, PyTorch, Spark, Hadoop, Kafka, Elasticsearch, Power BI, Tableau</p>
+    </div>
+    <div class="tech-block">
+      <h4>ERP &amp; Platforms</h4>
+      <p>SAP, Oracle EBS, Workday, Salesforce, Microsoft Dynamics, NetSuite, PeopleSoft, Infor</p>
+    </div>
+    <div class="tech-block">
+      <h4>Cybersecurity &amp; Networking</h4>
+      <p>Palo Alto, Cisco, Fortinet, SIEM, DLP, Penetration Testing, Cloud Security, IAM, SOC</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── PROJECT ── -->
+<section id="project">
+  <div class="reveal">
+    <div class="section-label">Featured Work</div>
+    <h2 class="section-title">Case study: <em>ATS transformation</em></h2>
+  </div>
+  <div class="case-study reveal">
+    <div class="case-study-header">
+      <div class="case-tag">🚀 ATS Implementation</div>
+      <h3>Applicant Tracking System — Revolutionising Hiring Efficiency</h3>
+      <p>Spearheaded the development and implementation of an advanced ATS tailored for recruiters — streamlining the entire hiring lifecycle, significantly reducing costs, and shortening time-to-fill through intelligent automation, real-time analytics, and cross-functional collaboration tools.</p>
+    </div>
+    <div class="case-study-body">
+      <div class="case-metrics">
+        <div class="metric-box">
+          <span class="val">20%</span>
+          <span class="desc">Time-to-fill improvement</span>
+        </div>
+        <div class="metric-box">
+          <span class="val">↓ Cost</span>
+          <span class="desc">Hiring cost reduction via automation</span>
+        </div>
+        <div class="metric-box">
+          <span class="val">95%+</span>
+          <span class="desc">SLA compliance maintained</span>
+        </div>
+        <div class="metric-box">
+          <span class="val">360°</span>
+          <span class="desc">Real-time stakeholder analytics</span>
+        </div>
+      </div>
+      <div class="case-features">
+        <h4>Key Deliverables</h4>
+        <ul class="feature-list">
+          <li>Automated candidate screening and sourcing workflows</li>
+          <li>Standardised interview process framework across all BUs</li>
+          <li>Real-time collaboration suite for distributed hiring teams</li>
+          <li>TAT, conversion, and pipeline health dashboards</li>
+          <li>Bottleneck identification and resolution tooling</li>
+          <li>Full compliance and onboarding lifecycle tracking</li>
+          <li>Cost-per-hire analytics with trend visualisation</li>
+          <li>Stakeholder-facing reporting with boardroom-ready outputs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── ACHIEVEMENTS ── -->
+<section id="achievements">
+  <div class="reveal">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-title">Milestones &amp; <em>achievements</em></h2>
+  </div>
+  <div class="achievements-grid reveal">
+    <div class="achievement-card">
+      <div class="ach-icon">🏆</div>
+      <div class="ach-text">
+        <h4>Top Performer 2019, 2020 &amp; 2021</h4>
+        <p>Awarded for consistent excellence in IT hiring and delivery across three consecutive years.</p>
+      </div>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">🏅</div>
+      <div class="ach-text">
+        <h4>ISO 9001:2015 Certified Specialist</h4>
+        <p>Quality management excellence aligned with international HR standards.</p>
+      </div>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">⚡</div>
+      <div class="ach-text">
+        <h4>Recruitment Automation Pioneer</h4>
+        <p>Implemented innovative techniques that dramatically reduced time-to-hire and improved TAT across the organisation.</p>
+      </div>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">📊</div>
+      <div class="ach-text">
+        <h4>IT Hiring Excellence Award</h4>
+        <p>Recognised for outstanding stakeholder management and IT recruitment quality across multiple mandates.</p>
+      </div>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">🎓</div>
+      <div class="ach-text">
+        <h4>National Campus Ambassador</h4>
+        <p>Represented college at a national-level campus ambassador programme.</p>
+      </div>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">🥇</div>
+      <div class="ach-text">
+        <h4>Resolute Competition Winner</h4>
+        <p>Won a workplace problem-solving competition focused on delivering solutions to new hire onboarding challenges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ── CERTIFICATIONS ── -->
+<section id="certifications">
+  <div class="reveal">
+    <div class="section-label">Continuous Learning</div>
+    <h2 class="section-title">Certifications &amp; <em>credentials</em></h2>
+  </div>
+  <div class="certs-grid reveal">
+    <div class="cert-card">
+      <div class="cert-provider">Semrush</div>
+      <h3>Leadership &amp; People Management</h3>
+      <p>Advanced frameworks for leading high-performing teams and building a culture of excellence in talent functions.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-provider">IIM Jobs / IIM</div>
+      <h3>Talent Analytics &amp; Employer Branding</h3>
+      <p>Data-driven talent intelligence, workforce analytics, and strategic employer brand positioning.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-provider">Outskill</div>
+      <h3>Masters in Generative AI — Generalist</h3>
+      <p>Comprehensive understanding of Gen AI applications, enabling AI-augmented recruitment strategies and future-ready talent operations.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-provider">DevSkiller</div>
+      <h3>Tech Recruitment Professional</h3>
+      <p>Specialised knowledge in technology recruitment to identify, engage, and attract top-tier tech talent in competitive markets.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-provider">ProTouch</div>
+      <h3>ISO 9001:2015 · SHRM · Payroll &amp; TA</h3>
+      <p>Quality management, strategic HR, statutory compliance, and specialised talent acquisition practices.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-provider">SkillUP / Simplilearn</div>
+      <h3>Agile Scrum Master &amp; Salesforce Development</h3>
+      <p>Agile methodologies for iterative recruitment and Salesforce CRM proficiency for optimised hiring workflows.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-provider">ProTouch</div>
+      <h3>POSH — Prevention of Sexual Harassment</h3>
+      <p>Certified in building safe, inclusive workplaces and addressing harassment with compliance, empathy, and leadership.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-provider">Shaw Academy</div>
+      <h3>Financial Trading · Web Programming · Java</h3>
+      <p>Broadened technical fluency enabling meaningful engagement with candidates across finance and technology sectors.</p>
+    </div>
+  </div>
+</section>
+
+
+<hr class="divider"/>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Let's build something<br/><em>great together</em></h2>
+    <p class="section-body">Whether you're looking for a strategic hiring leader, a talent transformation partner, or want to explore collaboration — I'd love to connect.</p>
+  </div>
+  <div class="contact-layout reveal">
+    <div>
+      <div class="contact-links">
+        <a href="mailto:jobsforme693@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉️</div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">jobsforme693@gmail.com</span>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ch-naresh/" target="_blank" class="contact-link">
+          <div class="contact-link-icon">💼</div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">linkedin.com/in/ch-naresh</span>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a href="https://github.com/Naresh-Res" target="_blank" class="contact-link">
+          <div class="contact-link-icon">🐙</div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-value">github.com/Naresh-Res</span>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a href="https://chnaresh.netlify.app/" target="_blank" class="contact-link">
+          <div class="contact-link-icon">🌐</div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">Portfolio Site</span>
+            <span class="contact-link-value">chnaresh.netlify.app</span>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div style="margin-bottom:1.5rem;">
+        <p style="font-size:0.8rem;color:var(--text-secondary);">Send me a message and I'll get back within 24 hours.</p>
+      </div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Full name"/>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com"/>
+      </div>
+      <div class="form-group">
+        <label>Organisation</label>
+        <input type="text" placeholder="Company or organisation"/>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="4" placeholder="Tell me about the opportunity or collaboration..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Thank you! Your message has been noted. Please email jobsforme693@gmail.com directly for a prompt response.')">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span>© 2025 Ch Naresh · Talent Acquisition Leader · Hyderabad, India</span>
+  <span>Built for <a href="https://github.com/Naresh-Res" target="_blank">github.com/Naresh-Res</a></span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) cur = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : '';
+    });
+  });
+</script>
+</body>
+</html>
